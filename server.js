@@ -10,9 +10,23 @@ app.get("/", (request, response) => {
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
+/*
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 240000);
+*/
+
+const isOwner = (req, res, next) => {
+  const secret = req.query.secret;
+  
+  if (secret === process.env.SECRET) {
+    return next();
+  }
+  
+  return res.status(401).send('you don\'t have permission');
+}
+
+app.use('/static', isOwner, express.static(__dirname));
 
 //var logger = require('logger').createLogger(); // logs to STDOUT
 var logger = require("logger").createLogger("suggestions.log"); // logs to a file
