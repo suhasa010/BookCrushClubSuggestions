@@ -80,8 +80,6 @@ You can suggest one book a month. Send /reset to discard your suggestion and sub
 
 Thank you,
 <i>BookCrush Team</i>
-
-<i>P.S: Visit bit.ly/BCCBot if the bot is down.</i>
 `,
     { parse_mode: "HTML" }
   );
@@ -108,8 +106,6 @@ You can suggest one book a month. Send /reset to discard your suggestion and sub
 
 Thank you,
 <i>BookCrush Team</i>
-
-<i>P.S: Visit bit.ly/BCCBot if the bot is down.</i>
 `,
     { parse_mode: "HTML" }
   );
